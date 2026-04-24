@@ -1,0 +1,14 @@
+# Modelos de Ollama (ocupan mucho espacio)
+.ollama/
+
+# Extensiones cacheadas del servidor de VS Code
+.vscode-server/
+
+# Variables de entorno sensibles
+.env
+.env.local
+
+# Archivos temporales
+*.log
+*.swp
+.DS_Store

@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - dev-net
+    
+
+  dev:
+    image: mcr.microsoft.com/devcontainers/python:3.12
+    container_name: dev
+    command: sleep infinity
+    volumes:
+      - .:/workspace:cached 
+    networks:
+      - dev-net
+    depends_on:
+      - ollama
+
+networks:
+  dev-net:
+    driver: bridge
+
+volumes:
+  ollama_data:

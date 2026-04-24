@@ -13,7 +13,6 @@ services:
 
   dev:
     image: mcr.microsoft.com/devcontainers/python:3.12
-    container_name: dev
     command: sleep infinity
     volumes:
       - .:/workspace:cached 
@@ -28,3 +27,5 @@ networks:
 
 volumes:
   ollama_data:
+    external: true
+    name: ollama-shared-data

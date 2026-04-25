@@ -17,8 +17,8 @@ services:
       - .:/workspace:cached 
     networks:
       - dev-net
-    depends_on:
-      - ollama
+    #depends_on:
+    #  - ollama
 
 networks:
   dev-net:
